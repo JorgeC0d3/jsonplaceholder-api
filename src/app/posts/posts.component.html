@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <h5 class="text-center mb-5">POSTS</h5>
+
+    <!-- Controles de paginación -->
+    <div class="pagination justify-content-center mt-4 mb-4">
+        <button class="btn btn-outline-primary mx-1" (click)="changePage(currentPage - 1)"
+            [disabled]="currentPage === 1">
+            Previous
+        </button>
+        <span class="mx-2">Page {{ currentPage }} of {{ totalPages }}</span>
+        <button class="btn btn-outline-primary mx-1" (click)="changePage(currentPage + 1)"
+            [disabled]="currentPage === totalPages">
+            Next
+        </button>
+    </div>
+
+    <div class="row row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+        @for(post of paginatedPosts; track post.id){
+        <div class="col-md-3 mb-3">
+            <app-post [post]="post" />
+        </div>
+        }
+    </div>
+
+</div>

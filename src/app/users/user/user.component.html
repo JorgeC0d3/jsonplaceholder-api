@@ -1,0 +1,11 @@
+<a [routerLink]="['/dashboard/user', user.id]" class="text-decoration-none">
+    <div class="card">
+    <div class="card-body">
+        <h5>{{user.name}}</h5>
+        <hr>
+        <span><span class="material-icons">email</span> {{user.email}}</span>
+        <br>
+        <span><span class="material-icons">phone</span> {{user.phone}}</span>
+    </div>
+    </div>
+</a>

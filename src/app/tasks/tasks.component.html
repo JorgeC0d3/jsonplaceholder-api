@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h5 class="text-center mb-5">TASKS</h5>
+
+    <!-- Filtros -->
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="row mb-5">
+            <div class="col-md-4 mb-3">
+                <label for="status">Filter by Status:</label>
+                <select id="status" class="form-select" [(ngModel)]="statusFilter">
+                    <option value="">All</option>
+                    <option [value]="true">Completed</option>
+                    <option [value]="false">Not Completed</option>
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="userId">Filter by User ID:</label>
+                <input type="number" id="userId" class="form-control" [(ngModel)]="userFilter" placeholder="User ID">
+            </div>
+            <div class="col-md-4">
+                <!-- Botón para aplicar los filtros -->
+                <button class="btn btn-primary mt-4 w-100" (click)="applyFilter()">Apply Filter</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+
+        @for(task of filteredTasks; track task.id){
+        <div class="col-md-3 mb-3">
+            <app-task [task]="task" />
+        </div>
+        }
+
+    </div>
+
+</div>

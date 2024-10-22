@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h3>{{ user.name }}</h3>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> <a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+
+            <hr>
+
+            <h5>Address</h5>
+            <p>{{ user.address.street }}, {{ user.address.suite }}</p>
+            <p>{{ user.address.city }}, {{ user.address.zipcode }}</p>
+            <p><strong>Geo:</strong> Lat: {{ user.address.geo.lat }}, Lng: {{ user.address.geo.lng }}</p>
+
+            <hr>
+
+            <p><strong>Phone:</strong> {{ user.phone }}</p>
+            <p><strong>Website:</strong> <a href="http://{{ user.website }}" target="_blank">{{ user.website }}</a></p>
+
+            <hr>
+
+            <h5>Company</h5>
+            <p><strong>Name:</strong> {{ user.company.name }}</p>
+            <p><strong>CatchPhrase:</strong> {{ user.company.catchPhrase }}</p>
+            <p><strong>BS:</strong> {{ user.company.bs }}</p>
+        </div>
+    </div>
+</div>
